@@ -19,4 +19,8 @@ int main(int argc, char** argv) {
     } else {
         cout << -1 << '\n';
     }
+
+    delete []arr;
+
+    return 0;
 }
