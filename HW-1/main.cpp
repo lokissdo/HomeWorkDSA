@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include "helper.h"
 
 int main(int argc, char** argv) {
     if (argc < 3) {
@@ -7,36 +6,17 @@ int main(int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
-    int k = atoi(argv[1]), sz = argc - 2, cnt_loops = 0, pos = -1;
-    int *arr = new int[sz];
+    int numToFind = atoi(argv[1]), arrSize = argc - 2;
+    int *arr = new int[arrSize];
 
     for (int i = 2; i < argc; i++) {
         arr[i-2] = atoi(argv[i]);
     }
+    pair<int, int> ans = InterpolationSearch(arr, arrSize, numToFind);
 
-    // for (int i = 0; i < sz; i++) cout << arr[i] << " \n"[i == sz - 1];
-    // Assume that the array is sorted.
-    int l = 0, r = sz - 1 , x;
-
-    while (l <= r && arr[l] <= k && k <= arr[r]) {
-        cnt_loops++;
-        x = l + (k - arr[l]) * (r - l) / (arr[r] - arr[l]);
-        if (arr[x] == k) {
-            pos = x;
-            break;
-        }
-        if (arr[x] > k) {
-            r = x - 1;
-        }
-        else {
-            l = x + 1;
-        }
+    if (ans.first > 0) {
+        cout << ans.first << " - " << ans.second << '\n';
+    } else {
+        cout << -1 << '\n';
     }
-    if (pos == -1) {
-        cout << -1;
-    }
-    else {
-        cout << pos + 1 << " - " << cnt_loops;
-    }
-    delete []arr;
 }
