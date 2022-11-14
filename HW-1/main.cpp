@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     int *arr = new int[arrSize];
 
     for (int i = 2; i < argc; i++) {
-        arr[i-2] = atoi(argv[i]);
+        arr[i - 2] = atoi(argv[i]);
     }
     pair<int, int> ans = InterpolationSearch(arr, arrSize, numToFind);
 
