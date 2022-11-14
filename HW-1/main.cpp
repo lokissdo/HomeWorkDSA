@@ -1,4 +1,4 @@
-#include "helper.h"
+#include "intSearch.h"
 
 int main(int argc, char** argv) {
     if (argc < 3) {
@@ -6,17 +6,18 @@ int main(int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
-    int numToFind = atoi(argv[1]), arrSize = argc - 2;
+    int num = atoi(argv[1]), arrSize = argc - 2;
     int *arr = new int[arrSize];
 
     for (int i = 2; i < argc; i++) {
         arr[i - 2] = atoi(argv[i]);
     }
-    pair<int, int> ans = InterpolationSearch(arr, arrSize, numToFind);
+    pair<int, int> ans = InterpolationSearch(arr, arrSize, num);
 
     if (ans.first > 0) {
         cout << ans.first << " - " << ans.second << '\n';
-    } else {
+    }
+    else {
         cout << -1 << '\n';
     }
 
