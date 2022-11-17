@@ -1,1 +1,1 @@
-Project of Hung and Duy - Sophomore in HCMUS
+Project of Hung and Duy - Sophomores in HCMUS
