@@ -17,7 +17,6 @@ void createTrie(TrieNode* &root, string FileName) {
     inp.open(FileName, ios::in);
 
     if (!inp.good()) {
-        inp.close();
         return;
     }
 
