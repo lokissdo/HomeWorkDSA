@@ -1,4 +1,4 @@
-#include "helper.h"
+#include "intSearch.h"
 
 pair<int, int> InterpolationSearch(int *arr, int arrSize, int num) {
     int left = 0, right = arrSize - 1, mid;
