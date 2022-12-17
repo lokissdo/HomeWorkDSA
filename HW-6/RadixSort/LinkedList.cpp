@@ -1,5 +1,15 @@
 #include "LinkedList.h"
 
+Bucket::~Bucket() {
+    for (NRef p = head; p != nullptr;) {
+        NRef nTemp = p;
+        p = p->next;
+        delete nTemp;
+    }
+    head = nullptr;
+    tail = nullptr;
+}
+
 NRef getNode(int k) {
     NRef node = new Node;
     node->key = k;

@@ -31,7 +31,10 @@ int main() {
     }
 
     radixSort(head, tail, k, d);
-    for (NRef p = head; p != nullptr; p = p->next) {
+    for (NRef p = head; p != nullptr;) {
         cout << p->key << ' ';
+        NRef nTemp = p;
+        p = p->next;
+        delete nTemp;
     }
 }

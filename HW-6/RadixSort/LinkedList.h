@@ -23,6 +23,8 @@ struct Bucket {
     NRef head;
     NRef tail;
     BRef next;
+
+    ~Bucket();
 };
 
 NRef getNode(int k);
